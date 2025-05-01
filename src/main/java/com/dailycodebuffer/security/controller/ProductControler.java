@@ -21,7 +21,7 @@ public class ProductControler {
     public List<Product> getProducts(){
         return products;
     }
-// dsadsad
+
     @PostMapping
     public Product saveProduct(@RequestBody Product product){
         products.add(product);
