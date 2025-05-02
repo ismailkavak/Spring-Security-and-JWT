@@ -18,9 +18,9 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(
-                request -> request.requestMatchers("register").permitAll()
+                request -> request.requestMatchers("register","login").permitAll()
                         .anyRequest().authenticated()
-        ).formLogin(Customizer.withDefaults())
+        )
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
